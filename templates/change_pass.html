@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+<div style="margin-top: 10%" class="text-center">
+    <form class="form-group" method="post">
+       {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Change" class="btn btn-primary">
+    </form>
+</div>
+
+{% endblock main %}

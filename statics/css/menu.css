@@ -1,0 +1,30 @@
+img {
+    margin-top: 10px;
+    position: center;
+    max-height: 100px;
+    max-width: 100px;
+    width: auto;
+    height: auto;
+}
+
+body ul li a {
+    margin-left: 10px;
+    text-align: left;
+    font: 800 12px Roboto, sans-serif;
+    height: 50px;
+    background: #006738;
+    border: 0;
+    border-radius: 150px;
+    color: #fff;
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 35px;
+    transition: filter 0.2s;
+}
+
+body ul li a:hover {
+        color: black;
+        filter: brightness(90%);
+}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+    <form class="form-group" method="POST">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <input type="submit" value="Salvar" class="btn btn-primary">
+    </form>
+{% endblock main %}

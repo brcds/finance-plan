@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+    <a href="/debitos/create">
+        adicionar novo
+    </a>
+
+    </br></br>
+
+    <table class="table table-light">
+        <thead>
+        <tr class="table table-light">
+            <th scope="col"></th>
+            <th scope="col">Valor</th>
+            <th scope="col">Item</th>
+            <th scope="col">Observação</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Credor</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Parcelas</th>
+            <th scope="col">Valor total</th>
+            <th scope="col">Hrs Trab.</br>para esta divida</th>
+            <th scope="col">vencimento</th>
+            <th scope="col">Status</th>
+        </tr>
+        </thead>
+        {% for debitos in object_list %}
+            <tbody>
+            <tr class="table table-light">
+                <td><a href="{% url 'debitos_delete' debitos.id %}">x</a></td>
+                <td>{{ debitos.produto }}</td>
+                <td>
+                    <a href="{% url 'debitos_update' debitos.id %}">
+                        R${{ debitos.valor }}</a>
+                </td>
+                <td>{{ debitos.observacao }}</td>
+                <td>{{ debitos.categoria }}</td>
+                <td>{{ debitos.tipo }}</td>
+                <td>{{ debitos.credor }}</td>
+                <td>{{ debitos.parcelas }}</td>
+                <td>R${{ debitos.valor_total }}</td>
+                <td>{{ debitos.hrs_trab_pagar }}</td>
+                <td>{{ debitos.vencimento }}</td>
+                <td>{{ debitos.status }}</td>
+            </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+{% endblock main %}
